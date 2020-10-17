@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.VideoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}">
+                <customelements:SKImage x:Name="CameraImage" />
+            </Frame>
+            <Button
+                x:Name="SwitchCameraButton"
+                Grid.Row="2"
+                Grid.Column="1"
+                Padding="5"
+                BackgroundColor="{StaticResource Black}"
+                BorderColor="{DynamicResource TraceColor}"
+                Clicked="SwitchCameraButton_Clicked"
+                CornerRadius="10"
+                Text="Switch Camera"
+                TextColor="{StaticResource White}" />
+            <Button
+                x:Name="SwitchResolution"
+                Grid.Row="2"
+                Grid.Column="2"
+                Padding="5"
+                BackgroundColor="{StaticResource Black}"
+                BorderColor="{DynamicResource TraceColor}"
+                Clicked="SwitchResolution_Clicked"
+                CornerRadius="10"
+                Text="Switch Resolution"
+                TextColor="{StaticResource White}" />
+            <Button
+                x:Name="CaptureCameraButton"
+                Grid.Row="3"
+                Grid.Column="1"
+                Padding="5"
+                BackgroundColor="{StaticResource Black}"
+                BorderColor="{DynamicResource TraceColor}"
+                Clicked="CaptureCameraButton_Clicked"
+                CornerRadius="10"
+                Text="Capture"
+                TextColor="{StaticResource White}" />
+            <Button
+                x:Name="ImagesButton"
+                Grid.Row="3"
+                Grid.Column="2"
+                Padding="5"
+                BackgroundColor="{StaticResource Black}"
+                BorderColor="{DynamicResource TraceColor}"
+                Clicked="ImagesButton_Clicked"
+                CornerRadius="10"
+                Text="Saved"
+                TextColor="{StaticResource White}" />
+        </Grid>
+    </ContentPage.Content>
+</Classes:BaseContentPage>

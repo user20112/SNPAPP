@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage
+    x:Class="ResumeApp.Pages.ActiveMQPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:classes="clr-namespace:ResumeApp.Classes"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Received on MQTT:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="MQTTReceivedLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text=""
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Send by MQTT:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="SendMQTTEditor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="MQTTSendButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="MQTTSendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+
+            <Frame
+                Grid.Row="2"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Received on Stomp:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="StompReceivedLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text=""
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Send by Stomp:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="SendStompEditor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="StompSendButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="StompSendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+
+            <Frame
+                Grid.Row="3"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Received on OpenWire:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="OpenWireReceivedLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text=""
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Send by OpenWire:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="SendOpenWireEditor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="OpenWireSendButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="OpenWireSendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage
+    x:Class="ResumeApp.Pages.SnakePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{DynamicResource Gray}"
+                BorderColor="{DynamicResource TraceColor}">
+                <customelements:SKImage x:Name="SnakeDisplay" />
+            </Frame>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="45" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.RowSpan="2"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="GridSize:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="SizeLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="6"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Start" />
+                    <Slider
+                        x:Name="SizeSlider"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="128"
+                        Minimum="6"
+                        ValueChanged="SizeSlider_ValueChanged"
+                        VerticalOptions="FillAndExpand" />
+                    <Button
+                        x:Name="UpdateButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="UpdateButton_Clicked"
+                        CornerRadius="10"
+                        Text="UpdateSettings"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

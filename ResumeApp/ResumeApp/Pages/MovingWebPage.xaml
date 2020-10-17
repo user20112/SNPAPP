@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage
+    x:Class="ResumeApp.Pages.MovingWebPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}">
+                <customelements:SKImage x:Name="WebDisplay" />
+            </Frame>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="15" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.RowSpan="2"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Link Length:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="LinkLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="5"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Start" />
+                    <Slider
+                        x:Name="LinkLength"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="10"
+                        Minimum="1"
+                        ValueChanged="LinkLength_ValueChanged"
+                        VerticalOptions="FillAndExpand"
+                        Value="5" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.RowSpan="2"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Max Node Speed:"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="SpeedLabel"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="5"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Start" />
+                    <Slider
+                        x:Name="NodeSpeed"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="10"
+                        Minimum="1"
+                        ValueChanged="NodeSpeed_ValueChanged"
+                        VerticalOptions="FillAndExpand"
+                        Value="1" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

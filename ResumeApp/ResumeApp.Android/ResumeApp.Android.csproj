@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDAB92A9-DC20-4D9A-B57A-0F1B1C9D313F}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ResumeApp.Droid</RootNamespace>
+    <AssemblyName>ResumeApp.Android</AssemblyName>
+    <Deterministic>True</Deterministic>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <LangVersion>8.0</LangVersion>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <LangVersion>8.0</LangVersion>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.World.Android">
+      <HintPath>..\..\References\Emgu.CV.World.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Apache.NMS.ActiveMQ.NetStd">
+      <Version>1.7.3</Version>
+    </PackageReference>
+    <PackageReference Include="Apache.NMS.NetStd">
+      <Version>1.7.1.3899</Version>
+    </PackageReference>
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient">
+      <Version>3.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="NETStandard.Library">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Q42.HueApi">
+      <Version>3.15.4</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp">
+      <Version>2.80.2</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp.Views">
+      <Version>2.80.2</Version>
+    </PackageReference>
+    <PackageReference Include="TweetSharp-Unofficial-DotNetStandard">
+      <Version>2.3.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bluetooth\Adapter.cs" />
+    <Compile Include="Bluetooth\Characteristic.cs" />
+    <Compile Include="Bluetooth\Descriptor.cs" />
+    <Compile Include="Bluetooth\Device.cs" />
+    <Compile Include="Bluetooth\GattCallback.cs" />
+    <Compile Include="Bluetooth\Service.cs" />
+    <Compile Include="CallBacks\CameraCaptureSessionCallback.cs" />
+    <Compile Include="CallBacks\CameraCaptureSessionStateCallback.cs" />
+    <Compile Include="CallBacks\CameraStateListener.cs" />
+    <Compile Include="CallBacks\ImageReaderCallback.cs" />
+    <Compile Include="CallBacks\USBPermissionBroadcastReceiver.cs" />
+    <Compile Include="CustomElements\BetterEntryRenderer.cs" />
+    <Compile Include="CustomElements\BetterListViewRenderer.cs" />
+    <Compile Include="CustomElements\BetterPickerRenderer.cs" />
+    <Compile Include="CustomElements\BetterScrollViewRenderer.cs" />
+    <Compile Include="CustomElements\BetterViewCellRenderer.cs" />
+    <Compile Include="CustomElements\CustomNumberPicker.cs" />
+    <Compile Include="CustomElements\SKImageRenderer.cs" />
+    <Compile Include="InterfaceImplimentations\Convert.cs" />
+    <Compile Include="InterfaceImplimentations\HIDDeviceInterface.cs" />
+    <Compile Include="InterfaceImplimentations\SettingsManagerInterface.cs" />
+    <Compile Include="InterfaceImplimentations\PlatformSpecificInterface.cs" />
+    <Compile Include="InterfaceImplimentations\EmguInterface.cs" />
+    <Compile Include="InterfaceImplimentations\FileSaveInterface.cs" />
+    <Compile Include="InterfaceImplimentations\LocationListener.cs" />
+    <Compile Include="InterfaceImplimentations\VideoSource.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.xml" />
+    <AndroidResource Include="Resources\layout\Toolbar.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResumeApp\ResumeApp.csproj">
+      <Project>{7885C252-2B43-4282-B50B-0D6D0295B660}</Project>
+      <Name>ResumeApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SplashScreenImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource DarkGray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <customelements:BetterFrame
+                x:Name="UISettingsFrame"
+                Grid.Row="1"
+                Grid.Column="1"
+                BorderColor="{DynamicResource TraceColor}"
+                Corner="40"
+                OuterColor="{StaticResource Gray}"
+                Thickness="10" />
+            <Grid x:Name="UISettingsGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="8*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Padding="0"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="UI Theme"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <customelements:BetterPicker
+                    x:Name="ThemePicker"
+                    Grid.Row="1"
+                    BackgroundColor="White"
+                    FontSize="12"
+                    HorizontalOptions="Fill"
+                    ItemsSource="{Binding ThemePickerSource}"
+                    PopupBackground="{StaticResource Gray}"
+                    PopupTextColor="White"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</Classes:BaseContentPage>

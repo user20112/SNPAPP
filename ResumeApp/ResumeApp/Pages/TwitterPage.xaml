@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage  xmlns:classes="clr-namespace:ResumeApp.Classes" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customelements="clr-namespace:ResumeApp.CustomElements" xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+                          x:Class="ResumeApp.Pages.TwitterPage">
+    <ContentPage.BindingContext>
+        <vm:TwitterViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.3*" />
+                <RowDefinition Height=".7*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Create a new Tweet!"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="NewTweetTextEditor"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="NewTweetSendButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="NewTweetSendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+            <Frame
+                Grid.Row="2"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <customelements:BetterPicker
+                        x:Name="TweetsPicker"
+                        Grid.Column="1"
+                        BackgroundColor="{StaticResource Gray}"
+                        FontSize="Small"
+                        HorizontalOptions="Fill"
+                        ItemsSource="{Binding TweetsPickerSource}"
+                        PopupBackground="{StaticResource Gray}"
+                        PopupTextColor="{StaticResource White}"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="Start" />
+                    <Label
+                        Grid.RowSpan="2"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Reply to an existing tweet."
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="ReplyTweetTextEditor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="ReplyTweetSendButton"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="ReplyTweetSendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

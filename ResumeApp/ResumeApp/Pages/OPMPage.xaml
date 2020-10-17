@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.OPMPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:ResumeApp.ViewModels" xmlns:converter="clr-namespace:ResumeApp.Classes.Converters"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:OPMViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="SettingsButton"
+            Clicked="SettingsButton_Clicked"
+            IconImageSource="" />
+        <ToolbarItem
+            x:Name="BluetoothButton"
+            Clicked="BluetoothButton_Clicked"
+            IconImageSource="" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:SKColorColorConverter x:Key="SKColorColorConverter" />
+            <converter:IncrementIntConverter x:Key="IncrementIntConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid x:Name="OverallGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                x:Name="WavelengthSelectionGrid"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*" />
+                    <ColumnDefinition Width="260" />
+                    <ColumnDefinition Width=".5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="8*" />
+                </Grid.RowDefinitions>
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource DarkGray}">
+                    <Grid Margin="5" BackgroundColor="{StaticResource LightGray}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Padding="0"
+                            FontSize="{StaticResource Title}"
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Text="Select Wavelength"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                        <customelements:BetterButton
+                            x:Name="EightFiftyButton"
+                            Grid.Row="1"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="EightFiftyButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="850"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="ThirteenHundredButton"
+                            Grid.Row="2"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="ThirteenHundredButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1300"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="ThirteenTenButton"
+                            Grid.Row="3"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="ThirteenTenButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1310"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="FourteenNintyButton"
+                            Grid.Row="4"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="FourteenNintyButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1490"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="FifteenFiftyButton"
+                            Grid.Row="5"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="FifteenFiftyButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1550"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="SixteenElevenButton"
+                            Grid.Row="6"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="SixteenElevenButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1611"
+                            TextColor="White" />
+                        <customelements:BetterButton
+                            x:Name="SixteenTwentyFiveButton"
+                            Grid.Row="7"
+                            Margin="10,2,10,2"
+                            Padding="0"
+                            BackgroundColor="Black"
+                            Clicked="SixteenTwentyFiveButton_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="1625"
+                            TextColor="White" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <StackLayout BackgroundColor="{StaticResource DarkGray}">
+                <customelements:BetterFrame
+                x:Name="MainFrame"
+                BorderColor="{DynamicResource TraceColor}"
+                Corner="40"
+                OuterColor="{StaticResource Gray}"
+                Thickness="10"
+                VerticalOptions="FillAndExpand" />
+                <Grid x:Name="MainGrid" BackgroundColor="{StaticResource DarkGray}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                    x:Name="OutputLabel"
+                    Grid.ColumnSpan="6"
+                    Margin="0"
+                    Padding="0"
+                    FontSize="{StaticResource Small}"
+                    Text="No OPM Detected"
+                    TextColor="{StaticResource White}" />
+                    <Frame x:Name="ReadingFrame"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="6"
+                       Margin="0"
+                       Padding="0"
+                       BorderColor="{DynamicResource TraceColor}"
+                       CornerRadius="40"
+                       BackgroundColor="{StaticResource LightGray}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                    x:Name="ReadingLabel"
+                    Margin="0"
+                    Padding="0"
+                    FontSize="{StaticResource Small}"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    Text="--.--"
+                    TextColor="{StaticResource White}" />
+                            <Label
+                    x:Name="ToneLabel"
+                    Margin="0,0,10,0"
+                    Padding="0"
+                    FontSize="{StaticResource Small}"
+                    HorizontalTextAlignment="End"
+                    VerticalTextAlignment="Center"
+                    Text="Tone:None"
+                    TextColor="{StaticResource White}" />
+                        </Grid>
+                    </Frame>
+                    <!--<customelements:BetterFrame
+                    x:Name="ReadingFrame"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="6"
+                    BorderColor="{DynamicResource TraceColor}"
+                    Corner="40"
+                    OuterColor="{StaticResource Gray}"
+                    Thickness="5" />-->
+                    <Grid
+                    Grid.Row="2"
+                    Grid.ColumnSpan="6"
+                    BackgroundColor="{StaticResource LightGray}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label
+                        Margin="0"
+                        Padding="0"
+                        FontSize="{StaticResource Small}"
+                        HorizontalTextAlignment="Center"
+                        Text="ID"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                        <Label
+                        Grid.Column="1"
+                        Margin="0"
+                        Padding="0"
+                        FontSize="{StaticResource Small}"
+                        HorizontalTextAlignment="Center"
+                        Text="Name"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                        <Label
+                        Grid.Column="2"
+                        Margin="0"
+                        Padding="0"
+                        FontSize="{StaticResource Small}"
+                        HorizontalTextAlignment="Center"
+                        Text="Value"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                        <Label
+                        Grid.Column="3"
+                        Margin="0"
+                        Padding="0"
+                        FontSize="{StaticResource Small}"
+                        HorizontalTextAlignment="Center"
+                        Text="λ"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                        <Label
+                        Grid.Column="4"
+                        Margin="0"
+                        Padding="0"
+                        FontSize="{StaticResource Small}"
+                        HorizontalTextAlignment="Center"
+                        Text="P/F"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                    </Grid>
+                    <customelements:BetterListView
+                    x:Name="ReadingList"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="6"
+                    Margin="1"
+                    BackgroundColor="{StaticResource White}"
+                    ItemSelected="ReadingList_ItemSelected"
+                    ItemsSource="{Binding ReadingListSource}"
+                    RowHeight="35">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid BackgroundColor="{Binding HighlightColor}" BindingContext="{Binding .}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="45" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="95" />
+                                            <ColumnDefinition Width="30" />
+                                            <ColumnDefinition Width="30" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                        Margin="0"
+                                        Padding="0"
+                                        FontSize="{StaticResource Small}"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Reading.Index, Converter={StaticResource IncrementIntConverter}}"
+                                        TextColor="{StaticResource Black}"
+                                        VerticalOptions="Center" />
+                                        <Label
+                                        Grid.Column="1"
+                                        Margin="0"
+                                        Padding="0"
+                                        FontSize="{StaticResource Small}"
+                                        HorizontalTextAlignment="Center"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Reading.ID}"
+                                        TextColor="{StaticResource Black}"
+                                        VerticalOptions="Center" />
+                                        <Label
+                                        Grid.Column="2"
+                                        Margin="0"
+                                        Padding="0"
+                                        FontSize="{StaticResource Small}"
+                                        HorizontalTextAlignment="Center"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Reading.DisplayValue}"
+                                        TextColor="{StaticResource Black}"
+                                        VerticalOptions="Center" />
+                                        <Label
+                                        Grid.Column="3"
+                                        Margin="0"
+                                        Padding="0"
+                                        FontSize="{StaticResource Small}"
+                                        HorizontalTextAlignment="Center"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Reading.Wavelength}"
+                                        TextColor="{StaticResource Black}"
+                                        VerticalOptions="Center" />
+                                        <Label
+                                        Grid.Column="5"
+                                        Margin="0"
+                                        Padding="0"
+                                        FontSize="{StaticResource Small}"
+                                        HorizontalTextAlignment="Center"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Reading.PassFailString}"
+                                        TextColor="{Binding Reading.PassFailColor, Converter={StaticResource SKColorColorConverter}}"
+                                        VerticalOptions="Center" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </customelements:BetterListView>
+                    <Button
+                    x:Name="ModeButton"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="ModeButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="DB/DBM"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="WaveButton"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="WaveButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Wave"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="SetRefButton"
+                    Grid.Row="4"
+                    Grid.Column="4"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="SetRefButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Set Ref"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="RenameButton"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="RenameButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Rename"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="OverWriteButton"
+                    Grid.Row="5"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="OverWriteButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Overwrite"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="DeleteButton"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="DeleteButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Delete"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                    <Button
+                    x:Name="SaveButton"
+                    Grid.Row="6"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="3"
+                    Margin="1"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="SaveButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Save"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</Classes:BaseContentPage>

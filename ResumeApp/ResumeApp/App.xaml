@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="ResumeApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#3333FF</Color>
+            <Color x:Key="LinkColor">Blue</Color>
+            <Color x:Key="TraceColor">#00BFFF</Color>
+            <Color x:Key="White">#e6e6e6</Color>
+            <Color x:Key="LightBlue">#00BFFF</Color>
+            <Color x:Key="Blue">#3333FF</Color>
+            <Color x:Key="Gray">#5A5A5A</Color>
+            <Color x:Key="LightGray">#666666</Color>
+            <Color x:Key="DarkGray">#3c3c3c</Color>
+            <Color x:Key="Pink">#FF64DC</Color>
+            <Color x:Key="DarkPink">#FF32DC</Color>
+            <Color x:Key="Green">#32EB32</Color>
+            <Color x:Key="DarkGreen">#32C832</Color>
+            <Color x:Key="Red">#FF3C3C</Color>
+            <Color x:Key="DarkRed">#FF0000</Color>
+            <Color x:Key="Orange">#FF8000</Color>
+            <Color x:Key="DarkOrange">#eb6600</Color>
+            <Color x:Key="Black">Black</Color>
+            <Color x:Key="DefualtColor">White</Color>
+            <Color x:Key="HighLightColor">#484848</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="{StaticResource White}" />
+            </Style>
+            <OnPlatform
+                x:Key="Micro"
+                x:TypeArguments="x:Double"
+                Android="8"
+                WinPhone="12"
+                iOS="8" />
+            <OnPlatform
+                x:Key="Small"
+                x:TypeArguments="x:Double"
+                Android="12"
+                WinPhone="18"
+                iOS="13" />
+            <OnPlatform
+                x:Key="Medium"
+                x:TypeArguments="x:Double"
+                Android="14"
+                WinPhone="22"
+                iOS="16" />
+            <OnPlatform
+                x:Key="Large"
+                x:TypeArguments="x:Double"
+                Android="16"
+                WinPhone="32"
+                iOS="20" />
+            <OnPlatform
+                x:Key="ExtraLarge"
+                x:TypeArguments="x:Double"
+                Android="22"
+                WinPhone="44"
+                iOS="26" />
+            <OnPlatform
+                x:Key="Title"
+                x:TypeArguments="x:Double"
+                Android="24"
+                WinPhone="24"
+                iOS="28" />
+            <OnPlatform
+                x:Key="Massive"
+                x:TypeArguments="x:Double"
+                Android="44"
+                WinPhone="48"
+                iOS="56" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

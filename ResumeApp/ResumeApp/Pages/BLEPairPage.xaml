@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage
+    x:Class="ResumeApp.Pages.BLEPairPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:BLEPairViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource DarkGray}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ActivityIndicator
+                x:Name="BusyIndicator"
+                HeightRequest="75"
+                HorizontalOptions="End"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center"
+                WidthRequest="75"
+                Color="{DynamicResource TraceColor}" />
+            <Label
+                Padding="0"
+                FontSize="{StaticResource Large}"
+                HorizontalOptions="Center"
+                Text="Not Connected"
+                TextColor="{StaticResource White}"
+                VerticalOptions="Center" />
+            <Button
+                x:Name="ScanButton"
+                Grid.Row="1"
+                Margin="20,5"
+                Padding="0"
+                BackgroundColor="{StaticResource Gray}"
+                Clicked="ScanButton_Clicked"
+                FontSize="{StaticResource Large}"
+                Text="Start Scan"
+                TextColor="{StaticResource White}" />
+            <customelements:BetterListView
+                x:Name="ReadingList"
+                Grid.Row="2"
+                Margin="1"
+                BackgroundColor="{StaticResource Gray}"
+                HasUnevenRows="True"
+                ItemSelected="ReadingList_ItemSelected"
+                ItemsSource="{Binding DetectedDevicesList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label
+                                Margin="5"
+                                Padding="0"
+                                FontSize="{StaticResource Large}"
+                                Text="{Binding .}"
+                                TextColor="{StaticResource White}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </customelements:BetterListView>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

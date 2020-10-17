@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage
+    x:Class="ResumeApp.Pages.OPMSettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:classes="clr-namespace:ResumeApp.Classes"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:OPMSettingsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height=".5*" />
+                    <RowDefinition Height=".5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="6*" />
+                </Grid.RowDefinitions>
+                <Entry
+                    x:Name="MinEntry"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    BackgroundColor="White"
+                    FontSize="{StaticResource Large}"
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Numeric"
+                    VerticalTextAlignment="End" />
+                <Entry
+                    x:Name="MaxEntry"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    FontSize="{StaticResource Large}"
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Numeric"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.ColumnSpan="2"
+                    Padding="0"
+                    FontSize="{StaticResource Large}"
+                    HorizontalTextAlignment="Center"
+                    Text="Pass/Fail"
+                    TextColor="{StaticResource White}"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Row="3"
+                    Grid.ColumnSpan="3"
+                    Padding="0"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Color Code Options"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Row="1"
+                    Padding="0"
+                    HorizontalTextAlignment="Center"
+                    InputTransparent="True"
+                    Text="Min"
+                    VerticalTextAlignment="Start" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Padding="0"
+                    HorizontalTextAlignment="Center"
+                    InputTransparent="True"
+                    Text="Max"
+                    VerticalTextAlignment="Start" />
+                <Button
+                    Grid.RowSpan="3"
+                    Grid.Column="2"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="ClearButton_Clicked"
+                    FontSize="{StaticResource Medium}"
+                    Text="Clear"
+                    TextColor="{StaticResource White}" />
+                <Label
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Padding="0"
+                    HorizontalTextAlignment="Center"
+                    InputTransparent="True"
+                    Text="Rename Current Readings To Match ColorCodes"
+                    TextColor="{StaticResource White}"
+                    VerticalTextAlignment="Start" />
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Black}"
+                    Clicked="RenameButton_Clicked"
+                    Text="Rename Readings"
+                    TextColor="{StaticResource White}" />
+                <customelements:BetterPicker
+                    x:Name="ColorCodePicker"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    BackgroundColor="White"
+                    FontSize="Small"
+                    HorizontalOptions="Fill"
+                    ItemsSource="{Binding ColorCodePickerSource}"
+                    SelectedIndexChanged="ColorCodePicker_SelectedIndexChanged"
+                    TextColor="{StaticResource Black}"
+                    VerticalOptions="Start" />
+                <Label
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    Padding="0"
+                    HorizontalTextAlignment="Center"
+                    Text="Selected Color Code"
+                    TextColor="{StaticResource White}"
+                    VerticalTextAlignment="Start" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

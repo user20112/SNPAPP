@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.AnalysisPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <customelements:SKImage x:Name="DisplayImage" />
+        </StackLayout>
+    </ContentPage.Content>
+</Classes:BaseContentPage>

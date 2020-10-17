@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.USBPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2.1*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="DisplayLabel"
+                Grid.Row="1"
+                Grid.Column="1"
+                Padding="10"
+                BackgroundColor="{StaticResource Gray}"
+                FontSize="{StaticResource Large}"
+                Text="Connecting To Device"
+                TextColor="{StaticResource White}" />
+            <Frame
+                Grid.Row="2"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Read From USB"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="ReceivedLabel"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text=""
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Send To Device"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Editor
+                        x:Name="SendEditor"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        Text=""
+                        TextColor="Black" />
+                    <Button
+                        x:Name="SendButton"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="SendButton_Clicked"
+                        CornerRadius="10"
+                        Text="Send"
+                        TextColor="{StaticResource White}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</Classes:BaseContentPage>

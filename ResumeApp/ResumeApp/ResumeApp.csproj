@@ -1,0 +1,163 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Apache.NMS.ActiveMQ.NetStd" Version="1.7.3" />
+		<PackageReference Include="Apache.NMS.NetStd" Version="1.7.1.3899" />
+		<PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="3.0.12" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Q42.HueApi" Version="3.15.4" />
+		<PackageReference Include="SkiaSharp" Version="2.80.2" />
+		<PackageReference Include="SkiaSharp.Views" Version="2.80.2" />
+		<PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+		<PackageReference Include="TweetSharp-Unofficial-DotNetStandard" Version="2.3.1.4" />
+		<PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Pages\LocalChatPage.xaml.cs">
+			<DependentUpon>LocalChatPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Pages\SNPMonitorPage.xaml.cs">
+			<DependentUpon>SNPMonitorPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Resources\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Pages\HomePage.xaml.cs">
+			<DependentUpon>HomePage.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Classes\Localization\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="CustomElements\BetterButton.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterEntry.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterFrame.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterListView.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterPicker.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterScrollView.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\BetterViewCell.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\DynamicGrid.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\DynamicListView.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\HorizontalListView.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\RoundedGrid.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="CustomElements\SKImage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\ActiveMQPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\AnalysisPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\BLEOPMPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\BLEPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\BLEPairPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\EmguPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\GPSLocationPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\HuePage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\LocalChatPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\MovingWebPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\OPMSettingsPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SchedulePage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SerialPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SnakePage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SNPMonitorPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SQLLitePage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\TwitterPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\USBPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\USBSelectPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\VideoPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\WifiPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resources\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\AboutPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\OPMPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Pages\SettingsPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

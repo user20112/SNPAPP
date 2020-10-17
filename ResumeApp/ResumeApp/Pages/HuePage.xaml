@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes:BaseContentPage  xmlns:classes="clr-namespace:ResumeApp.Classes" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customelements="clr-namespace:ResumeApp.CustomElements" xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+                          x:Class="ResumeApp.Pages.HuePage">
+    <ContentPage.BindingContext>
+        <vm:HueViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Gray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Gray}"
+                BorderColor="{DynamicResource TraceColor}"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <!--<RowDefinition Height="*" />
+                        <RowDefinition Height="*" />-->
+                    </Grid.RowDefinitions>
+                    <Label
+                        Padding="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Lights"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <customelements:BetterPicker
+                        x:Name="LightsPicker"
+                        Grid.Column="1"
+                        BackgroundColor="{StaticResource Gray}"
+                        FontSize="Small"
+                        HorizontalOptions="Fill"
+                        ItemsSource="{Binding LightsPickerSource}"
+                        PopupBackground="{StaticResource Gray}"
+                        PopupTextColor="{StaticResource White}"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Start" />
+                    <Label
+                        Padding="0"
+                        Grid.Row="1"
+                        HorizontalTextAlignment="Center"
+                        Text="Red Value"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Slider
+                        x:Name="RSlider"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="254"
+                        Minimum="0"
+                        VerticalOptions="FillAndExpand" />
+                    <Label
+                        Padding="0"
+                        Grid.Row="2"
+                        HorizontalTextAlignment="Center"
+                        Text="Green Value"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Slider
+                        x:Name="GSlider"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="254"
+                        Minimum="0"
+                        VerticalOptions="FillAndExpand" />
+                    <Label
+                        Padding="0"
+                        Grid.Row="3"
+                        HorizontalTextAlignment="Center"
+                        Text="Blue Value"
+                        TextColor="{StaticResource White}"
+                        VerticalTextAlignment="Center" />
+                    <Slider
+                        x:Name="BSlider"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="254"
+                        Minimum="0"
+                        VerticalOptions="FillAndExpand" />
+                    <Button
+                        x:Name="OnButton"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="OnButton_Clicked"
+                        CornerRadius="10"
+                        Text="On"
+                        TextColor="{StaticResource White}" />
+                    <Button
+                        x:Name="OffButton"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="OffButton_Clicked"
+                        CornerRadius="10"
+                        Text="Off"
+                        TextColor="{StaticResource White}" />
+                   <!-- <Button
+                        x:Name="RunTestProgram"
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="RunTestProgram_Clicked"
+                        CornerRadius="10"
+                        Text="Run Test Program"
+                        TextColor="{StaticResource White}" />
+                    <Button
+                        x:Name="StopTestProgram"
+                        Grid.Row="7"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="{StaticResource Black}"
+                        BorderColor="{DynamicResource TraceColor}"
+                        Clicked="StopTestProgram_Clicked"
+                        CornerRadius="10"
+                        Text="Stop Test Program"
+                        TextColor="{StaticResource White}" />-->
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</classes:BaseContentPage>

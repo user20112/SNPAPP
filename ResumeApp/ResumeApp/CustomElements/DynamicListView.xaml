@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="ResumeApp.CustomElements.DynamicListView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customelements="clr-namespace:ResumeApp.CustomElements"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentView.Content>
+        <customelements:BetterScrollView
+            HorizontalOptions="Fill"
+            Orientation="Vertical"
+            VerticalOptions="Fill">
+            <customelements:DynamicGrid x:Name="InternalGrid" ExpandDown="True" />
+        </customelements:BetterScrollView>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9575660-9B12-4C2B-93C9-F13CC024318E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ResumeApp.WPF</RootNamespace>
+    <AssemblyName>ResumeApp.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Apache.NMS, Version=1.7.1.3899, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Apache.NMS.NetStd.1.7.1.3899\lib\netstandard2.0\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Apache.NMS.ActiveMQ.NetStd.1.7.3\lib\netstandard2.0\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectShowLib-2005">
+      <HintPath>..\..\References\DirectShowLib-2005.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Platform.NetStandard, Version=4.4.0.4061, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Emgu.CV.4.4.0.4061\lib\netstandard2.0\Emgu.CV.Platform.NetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zlib.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ionic.Zlib.Core.1.0.0\lib\netstandard2.0\Ionic.Zlib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaFoundation">
+      <HintPath>..\..\References\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNetCore.WebUtilities.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.Headers.2.0.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="MQTTnet, Version=3.0.12.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MQTTnet.3.0.12\lib\net461\MQTTnet.dll</HintPath>
+    </Reference>
+    <Reference Include="MQTTnet.Extensions.ManagedClient, Version=3.0.12.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MQTTnet.Extensions.ManagedClient.3.0.12\lib\net452\MQTTnet.Extensions.ManagedClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTK.3.1.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTK.GLControl.3.1.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Q42.HueApi, Version=3.15.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Q42.HueApi.3.15.4\lib\net45\Q42.HueApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.2.80.2\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Desktop, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.2.80.2\lib\net462\SkiaSharp.Views.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Desktop.Common, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.Desktop.Common.2.80.2\lib\net462\SkiaSharp.Views.Desktop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Gtk, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.Gtk2.2.80.2\lib\net462\SkiaSharp.Views.Gtk.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.WindowsForms, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.WindowsForms.2.80.2\lib\net462\SkiaSharp.Views.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.WPF, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.WPF.2.80.2\lib\net462\SkiaSharp.Views.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Security, Version=4.0.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Security.4.3.2\lib\net46\System.Net.Security.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.WebSockets.4.3.0\lib\net46\System.Net.WebSockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.WebSockets.Client.4.3.2\lib\net46\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TweetSharp-Unofficial-DotNetStandard, Version=2.3.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TweetSharp-Unofficial-DotNetStandard.2.3.1.4\lib\netstandard2.0\TweetSharp-Unofficial-DotNetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="Windows.Foundation.FoundationContract">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+    </Reference>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.UniversalApiContract\7.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.4.8.0.1364\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.4.8.0.1364\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.WPF, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.Platform.WPF.4.8.0.1364\lib\net461\Xamarin.Forms.Platform.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.4.8.0.1364\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Popups\GatherBool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\GatherBool.Designer.cs">
+      <DependentUpon>GatherBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\GatherOKCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\GatherOKCancel.Designer.cs">
+      <DependentUpon>GatherOKCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\GatherTrinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\GatherTrinary.Designer.cs">
+      <DependentUpon>GatherTrinary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\ShareFilePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\ShareFilePopup.Designer.cs">
+      <DependentUpon>ShareFilePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\Toast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\Toast.Designer.cs">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSID\INetwork.cs" />
+    <Compile Include="SSID\INetworkConnection.cs" />
+    <Compile Include="SSID\INetworkListManager.cs" />
+    <Compile Include="SSID\Network.cs" />
+    <Compile Include="SSID\NetworkCollection.cs" />
+    <Compile Include="SSID\NetworkConnection.cs" />
+    <Compile Include="SSID\NetworkConnectionCollection.cs" />
+    <Compile Include="SSID\NetworkListEnums.cs" />
+    <Compile Include="SSID\NetworkListManager.cs" />
+    <Compile Include="SSID\NetworkListManagerClass.cs" />
+    <Compile Include="WMF\StreamHandler.cs" />
+    <Compile Include="WMF\AsyncCallbackHandler.cs" />
+    <Compile Include="WMF\COMObjBase.cs" />
+    <Compile Include="WMF\Device.cs" />
+    <Compile Include="WMF\MediaTypeInfo.cs" />
+    <Compile Include="WMF\MFTBase_Sync.cs" />
+    <Compile Include="WMF\MFTSampleGrabber_Sync.cs" />
+    <Compile Include="WMF\MFVideoFormatContainer.cs" />
+    <Compile Include="WMF\ObjectBase.cs" />
+    <Compile Include="WMF\WMFUtils.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\HIDFile.cs" />
+    <Compile Include="Classes\WindowAspectRatio.cs" />
+    <Compile Include="Classes\WindowsSetupApi.cs" />
+    <Compile Include="CustomElements\BetterEntryRenderer.cs" />
+    <Compile Include="CustomElements\BetterListViewRenderer.cs" />
+    <Compile Include="CustomElements\BetterPickerRenderer.cs" />
+    <Compile Include="CustomElements\BetterScrollViewRenderer.cs" />
+    <Compile Include="CustomElements\BetterViewCellRenderer.cs" />
+    <Compile Include="CustomElements\SKImageRenderer.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="InterfaceImplimentations\Convert.cs" />
+    <Compile Include="InterfaceImplimentations\DirectShowVideoInterface.cs" />
+    <Compile Include="InterfaceImplimentations\EmguInterface.cs" />
+    <Compile Include="InterfaceImplimentations\FileSaveInterface.cs" />
+    <Compile Include="InterfaceImplimentations\HIDDeviceInterface.cs" />
+    <Compile Include="InterfaceImplimentations\MFVideoInterface.cs" />
+    <Compile Include="InterfaceImplimentations\PlatformSpecificInterface.cs" />
+    <Compile Include="InterfaceImplimentations\SerialInterface.cs" />
+    <Compile Include="InterfaceImplimentations\SettingsManagerInterface.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Popups\GatherOKCancel.resx">
+      <DependentUpon>GatherOKCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\GatherTrinary.resx">
+      <DependentUpon>GatherTrinary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\ShareFilePopup.resx">
+      <DependentUpon>ShareFilePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\Toast.resx">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResumeApp\ResumeApp.csproj">
+      <Project>{da27e7c3-c37d-474c-8165-7d22be10e586}</Project>
+      <Name>ResumeApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\concrt140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\cvextern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\msvcp140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\opencv_videoio_ffmpeg411_64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\vcruntime140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\concrt140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\cvextern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\msvcp140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\opencv_videoio_ffmpeg411.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\vcruntime140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\..\packages\SkiaSharp.2.80.2\build\net462\SkiaSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SkiaSharp.2.80.2\build\net462\SkiaSharp.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\..\packages\SkiaSharp.2.80.2\build\net462\SkiaSharp.targets" Condition="Exists('..\..\packages\SkiaSharp.2.80.2\build\net462\SkiaSharp.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.4.8.0.1364\build\Xamarin.Forms.targets')" />
+</Project>

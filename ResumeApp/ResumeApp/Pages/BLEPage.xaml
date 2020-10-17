@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes:BaseContentPage
+    x:Class="ResumeApp.Pages.BLEPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Classes="clr-namespace:ResumeApp.Classes"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:ResumeApp.ViewModels"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:BLEViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource Gray}">
+            <Label
+                x:Name="DisplayLabel"
+                Padding="10"
+                BackgroundColor="{StaticResource Gray}"
+                FontSize="{StaticResource Large}"
+                Text="Connecting To Device"
+                TextColor="{StaticResource White}" />
+            <ListView
+                x:Name="ServicesList"
+                Grid.ColumnSpan="2"
+                BackgroundColor="{StaticResource Gray}"
+                HasUnevenRows="True"
+                ItemsSource="{Binding ServicesListSource}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".8*" />
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Padding="10"
+                                    FontSize="{StaticResource Large}"
+                                    Text="{Binding Label}"
+                                    TextColor="{StaticResource White}" />
+                                <ListView
+                                    Grid.Row="1"
+                                    Margin="0"
+                                    BackgroundColor="{StaticResource White}"
+                                    HeightRequest="100"
+                                    HorizontalOptions="Center"
+                                    ItemsSource="{Binding Characteristics}"
+                                    VerticalOptions="Start">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="50" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width=".2*" />
+                                                        <ColumnDefinition Width=".8*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label
+                                                        Padding="10"
+                                                        FontSize="{StaticResource Large}"
+                                                        Text="{Binding CharacteristicName}"
+                                                        TextColor="{StaticResource White}" />
+                                                    <Label
+                                                        Grid.Column="1"
+                                                        Padding="10"
+                                                        FontSize="{StaticResource Large}"
+                                                        Text="{Binding CurrentValue}"
+                                                        TextColor="{StaticResource White}" />
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    <ListView.Footer>
+                                        <Label />
+                                    </ListView.Footer>
+                                </ListView>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Label />
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</Classes:BaseContentPage>
